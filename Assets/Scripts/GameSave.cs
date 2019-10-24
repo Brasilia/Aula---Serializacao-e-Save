@@ -14,13 +14,6 @@ public class GameSave : MonoBehaviour
     private string m_gameDataFileName = "save.json";
     private string m_filePath;
 
-    [System.Serializable]
-    public struct GameData
-    {
-        public Player player;
-        public SerializationCallbackScript serializableScript;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +37,7 @@ public class GameSave : MonoBehaviour
 
     private void SaveGame()
     {
-        GameData gameData = new GameData();
+        //GameData gameData = new GameData();
         string dataAsJson = JsonUtility.ToJson(gameData);
         File.WriteAllText(m_filePath, dataAsJson);
     }
